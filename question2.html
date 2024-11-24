@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Check Number</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Check Number</h1>
+		<input type="text" id="userInput" placeholder="Enter a number">
+		<button onclick="checkInput()">Check</button>
+		<p></p>
+		<p id="textOutput" style="color: black;">This will check the number entered.</p>
+	</div>
+
+	<script>
+		function checkInput() {
+			let num = document.getElementById("userInput").value;
+			let text = document.getElementById("textOutput");
+
+			if (num === "" || isNaN(num)) {
+				text.innerHTML = "Please insert a valid number.";
+				// alert("Please insert a valid number.");
+			} else {
+				num = Number(num);
+				if (num < 10) {
+					text.innerHTML = "The number is lower than 10.";
+					// alert("The number is lower than 10.");
+					//this is to make the page display an alert message instead of the text
+				} else if (num > 10) {
+					text.innerHTML = "The number is higher than 10.";
+					// alert("The number is higher than 10.");
+				} else {
+					text.innerHTML = "The number is exactly 10.";
+					// alert("The number is exactly 10.");
+				}
+			}
+		}
+	</script>
+</body>
+</html>
